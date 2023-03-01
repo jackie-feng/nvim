@@ -80,3 +80,20 @@ vim.o.showtabline = 2
 
 -- 设置剪贴板
 vim.o.clipboard = 'unnamed'
+
+if vim.g.neovide then
+  vim.o.guifont = "Menlo:h14" 
+  vim.g.neovide_confirm_quit = true
+  vim.g.neovide_remember_window_size = true
+  vim.g.neovide_remember_window_position = true
+  vim.g.neovide_fullscreen = false
+  vim.g.neovide_cursor_animation_length = 0
+  vim.g.neovide_cursor_trail_size = 0
+  vim.g.neovide_cursor_animate_in_insert_mode = false
+  vim.g.neovide_cursor_animate_command_line = false
+end
+
+function _G.get_vars(name)
+  local v = vim.api.nvim_get_var(name)
+  return v
+end

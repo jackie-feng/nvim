@@ -34,7 +34,7 @@ local builtin = require('telescope.builtin')
 map("n", "<C-a>", ':Telescope live_grep theme=dropdown default_text=<C-R>=expand(\"<cword>\")<cr>', opt)
 map("n", "<C-p>", ':Telescope find_files theme=dropdown<cr>', opt)
 -- vim.keymap.set('n', '<C-p>', builtin.find_files, {})
-vim.keymap.set('n', '<C-S-f>', builtin.live_grep, {})
+vim.keymap.set('n', '<C-S-f>', '::Telescope live_grep theme=dropdown<cr>', {})
 -- vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 -- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
@@ -84,4 +84,41 @@ pluginKeys.cmp = function(cmp)
     -- end of super Tab
   }
 end
+
+if vim.g.neovide then
+  -- Put anything you want to happen only in Neovide here
+
+  map('n', "<D-1>", ':NvimTreeToggle<CR>', opt)
+  map('i', "<D-1>", '<esc>:NvimTreeToggle<CR>', opt)
+  map('n', "<D-s>", ":w<cr>", opt)
+  map('i', "<D-s>", '<esc>:w<CR>', opt)
+  map('n', "<D-q>", ":qa<cr>", opt)
+  map('n', "<D-w>", ":bd<cr>", opt)
+  map('n', "<D-t>", ":tabnew<cr>", opt)
+  map('n', "<D-d>", "dd", opt)
+  map('n', "<D-[>", ":BufferLineCyclePrev<cr>", opt)
+  map('n', "<D-]>", ":BufferLineCycleNext<cr>", opt)
+  map('i', "<D-[>", "<esc>:BufferLineCyclePrev<cr>", opt)
+  map('i', "<D-]>", "<esc>:BufferLineCycleNext<cr>", opt)
+end
+
+if vim.fn.has('gui_vimr') == 1 then
+  -- Here goes some VimR specific settings like
+  map("i", "<C-BS>", "<esc>viws", opt)
+  map("n", "<C-BS>", "viws", opt)
+  map('n', "<D-1>", ':NvimTreeToggle<CR>', opt)
+  map('i', "<D-1>", '<esc>:NvimTreeToggle<CR>', opt)
+  map('n', "<D-f", ':Telescope find_files theme=dropdown<cr>', opt)
+  map('n', "<D-s>", ":w<cr>", opt)
+  map('i', "<D-s>", '<esc>:w<CR>', opt)
+  map('n', "<D-q>", ":qa<cr>", opt)
+  map('n', "<D-w>", ":bd<cr>", opt)
+  map('n', "<D-t>", ":tabnew<cr>", opt)
+  map('n', "<D-d>", "dd", opt)
+  map('n', "<D-[>", ":BufferLineCyclePrev<cr>", opt)
+  map('n', "<D-]>", ":BufferLineCycleNext<cr>", opt)
+  map('i', "<D-[>", "<esc>:BufferLineCyclePrev<cr>", opt)
+  map('i', "<D-]>", "<esc>:BufferLineCycleNext<cr>", opt)
+end
+
 return pluginKeys
