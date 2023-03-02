@@ -10,6 +10,7 @@ map("n", "<C-S-t>", ":NvimTreeToggle<CR>", opt)
 -- 打开/关闭 tab
 map("n", "<C-n>", ":tabnew<CR>", opt)
 map("n", "<C-S-w>", ":bd<CR>", opt)
+map("n", "<C-c>", ":q<CR>", opt)
 
 -- tab 切换
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
