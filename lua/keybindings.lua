@@ -12,14 +12,20 @@ map("n", "<C-n>", ":tabnew<CR>", opt)
 map("n", "<C-S-w>", ":bd<CR>", opt)
 map("n", "<C-c>", ":q<CR>", opt)
 
+-- 自动保存
+map("i", "<esc>", "<esc>:w<CR>", opt)
+
 -- tab 切换
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
+map("i", "<C-h>", "<esc>:w<CR>:BufferLineCyclePrev<CR>", opt)
+map("i", "<C-l>", "<esc>:w<CR>:BufferLineCycleNext<CR>", opt)
 
 -- 注释
 map("n", "<leader>c", ":CommentToggle<CR>", opt)
 map("n", "<C-\\>", ":CommentToggle<CR>", opt)
 map("v", "<C-\\>", ":'<,'>CommentToggle<CR>", opt)
+map("i", "<C-\\>", "<esc>:CommentToggle<CR>:w<CR>", opt)
 
 map("i", "<C-BS>", "<esc>viws", opt)
 map("n", "<C-BS>", "viws", opt)
