@@ -15,6 +15,7 @@ lua require('autocmds')
 " 插件配置
 "  lua require('plugin-config/which-key')
 "  lua require('plugin-config/nvim-autopairs')
+lua require('plugin-config/nvim-cursorword')
 lua require('plugin-config/nvim-tree')
 lua require('plugin-config/gitsigns')
 lua require('plugin-config/bufferline')

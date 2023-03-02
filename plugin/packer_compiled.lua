@@ -144,6 +144,11 @@ _G.packer_plugins = {
     path = "/Users/fengjiacheng/.local/share/nvim/site/pack/packer/start/nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
   },
+  ["nvim-cursorword"] = {
+    loaded = true,
+    path = "/Users/fengjiacheng/.local/share/nvim/site/pack/packer/start/nvim-cursorword",
+    url = "https://github.com/xiyaowong/nvim-cursorword"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/fengjiacheng/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",

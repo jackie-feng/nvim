@@ -1,7 +1,7 @@
 return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-
+  use 'neovim/nvim-lspconfig'
   -- 主题
   use { "ellisonleao/gruvbox.nvim" }
 
@@ -55,4 +55,6 @@ return require('packer').startup(function()
     'dinhhuy258/git.nvim'
   }
   require('git').setup()
+
+  use 'xiyaowong/nvim-cursorword'
 end)
