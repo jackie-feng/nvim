@@ -27,8 +27,7 @@ map("n", "<C-\\>", ":CommentToggle<CR>", opt)
 map("v", "<C-\\>", ":'<,'>CommentToggle<CR>", opt)
 map("i", "<C-\\>", "<esc>:CommentToggle<CR>:w<CR>", opt)
 
-map("i", "<C-BS>", "<esc>viws", opt)
-map("n", "<C-BS>", "viws", opt)
+map("i", "<C-BS>", "<C-W>", opt)
 
 -- Git blame
 map("n", "<C-g>", ":GitBlame<cr>", opt)
@@ -111,21 +110,23 @@ end
 
 if vim.fn.has('gui_vimr') == 1 then
   -- Here goes some VimR specific settings like
-  map("i", "<C-BS>", "<esc>viws", opt)
-  map("n", "<C-BS>", "viws", opt)
   map('n', "<D-1>", ':NvimTreeToggle<CR>', opt)
   map('i', "<D-1>", '<esc>:NvimTreeToggle<CR>', opt)
-  map('n', "<D-f", ':Telescope find_files theme=dropdown<cr>', opt)
   map('n', "<D-s>", ":w<cr>", opt)
   map('i', "<D-s>", '<esc>:w<CR>', opt)
   map('n', "<D-q>", ":qa<cr>", opt)
   map('n', "<D-w>", ":bd<cr>", opt)
   map('n', "<D-t>", ":tabnew<cr>", opt)
   map('n', "<D-d>", "dd", opt)
-  map('n', "<D-[>", ":BufferLineCyclePrev<cr>", opt)
-  map('n', "<D-]>", ":BufferLineCycleNext<cr>", opt)
-  map('i', "<D-[>", "<esc>:BufferLineCyclePrev<cr>", opt)
-  map('i', "<D-]>", "<esc>:BufferLineCycleNext<cr>", opt)
+  map('n', "<S-D-{>", ":BufferLineCyclePrev<cr>", opt)
+  map('n', "<S-D-}>", ":BufferLineCycleNext<cr>", opt)
+  map('i', "<S-D-{>", "<esc>:BufferLineCyclePrev<cr>", opt)
+  map('i', "<S-D-}>", "<esc>:BufferLineCycleNext<cr>", opt)
+  map('n', '<S-D-f>', '::Telescope live_grep theme=dropdown<cr>', {})
+  map('i', "<D-BS>", "<C-W>", opt)
+  map('i', "<D-/>", "<esc>:CommentToggle<CR>", opt)
+  map('n', "<D-/>", ":CommentToggle<CR>", opt)
+  map('v', "<D-/>", ":'<,'>CommentToggle<CR>", opt)
 end
 
 return pluginKeys

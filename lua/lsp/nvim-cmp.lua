@@ -29,9 +29,16 @@ cmp.setup {
     -- { name = 'ultisnips' },
     -- -- For snippy users.
     -- { name = 'snippy' },
-  }, { { name = 'buffer' },
-       { name = 'path' }
-    }),
+  }, { 
+    { name = 'buffer',
+      option = {
+        get_bufnrs = function()
+          return vim.api.nvim_list_bufs()
+        end
+      }
+    },
+    { name = 'path' }
+  }),
 
   -- 快捷键
   mapping = require'keybindings'.cmp(cmp),
