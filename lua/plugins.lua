@@ -57,4 +57,6 @@ return require('packer').startup(function()
   require('git').setup()
 
   use 'xiyaowong/nvim-cursorword'
+
+  use 'wakatime/vim-wakatime'
 end)
