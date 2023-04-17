@@ -4,6 +4,7 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
   -- 主题
   use { "ellisonleao/gruvbox.nvim" }
+  use 'navarasu/onedark.nvim'
 
   -- 文件树
   use {
