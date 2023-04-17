@@ -78,6 +78,9 @@ vim.o.pumheight = 10
 -- always show tabline
 vim.o.showtabline = 2
 
+vim.o.foldmethod = 'indent'
+vim.o.foldlevelstart = 99
+
 -- 设置剪贴板
 vim.o.clipboard = 'unnamed'
 

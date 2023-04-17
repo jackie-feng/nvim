@@ -19,6 +19,7 @@ lua require('plugin-config/nvim-cursorword')
 lua require('plugin-config/nvim-tree')
 lua require('plugin-config/gitsigns')
 lua require('plugin-config/bufferline')
+lua require('plugin-config/telescope')
 
 " lsp
 lua require('lsp/setup')

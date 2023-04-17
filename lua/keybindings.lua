@@ -37,10 +37,10 @@ map("i", "<C-s>", "<esc>:w<cr>", opt)
 
 -- 文件搜索 / 光标所在词搜索 / 全文搜索
 local builtin = require('telescope.builtin')
-map("n", "<C-a>", ':Telescope live_grep theme=dropdown default_text=<C-R>=expand(\"<cword>\")<cr>', opt)
-map("n", "<C-p>", ':Telescope find_files find_command=rg,--files,--hidden,-g!.git theme=dropdown<cr>', opt)
+map("n", "<C-a>", ':Telescope live_grep default_text=<C-R>=expand(\"<cword>\")<cr>', opt)
+map("n", "<C-p>", ':Telescope find_files find_command=rg,--files,--hidden,-g!.git <cr>', opt)
 -- vim.keymap.set('n', '<C-p>', builtin.find_files, {})
-vim.keymap.set('n', '<C-S-f>', '::Telescope live_grep theme=dropdown<cr>', {})
+vim.keymap.set('n', '<C-S-f>', '::Telescope live_grep <cr>', {})
 -- vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 -- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
