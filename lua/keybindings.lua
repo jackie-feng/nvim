@@ -41,6 +41,7 @@ map("n", "<C-a>", ':Telescope live_grep default_text=<C-R>=expand(\"<cword>\")<c
 map("n", "<C-p>", ':Telescope find_files find_command=rg,--files,--hidden,-g!.git <cr>', opt)
 -- vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<C-S-f>', '::Telescope live_grep <cr>', {})
+vim.keymap.set('n', '<leader>f', '::Telescope live_grep <cr>', {})
 -- vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 -- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
