@@ -1,8 +1,13 @@
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
 
-local map = vim.api.nvim_set_keymap
-local opt = { noremap = true, silent = true }
+-- local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
+local opt = {
+  noremap = true, silent = true,
+  -- 在 expr 映射中，nvim_replace_termcodes() 会被自动应用于 Lua 函数返回的字符串
+  -- expr = true
+}
 
 -- 文件树
 map('n', '<leader>t', ':NvimTreeToggle<CR>', opt)
@@ -10,7 +15,7 @@ map("n", "<C-S-t>", ":NvimTreeToggle<CR>", opt)
 -- 打开/关闭 tab
 map("n", "<C-n>", ":tabnew<CR>", opt)
 map("n", "<C-S-w>", ":bd<CR>", opt)
-map("n", "<C-c>", ":q<CR>", opt)
+map("n", "<C-c>", ":bd<CR>", opt)
 
 -- 自动保存
 map("i", "<esc>", "<esc>:w<CR>", opt)
@@ -40,8 +45,9 @@ local builtin = require('telescope.builtin')
 map("n", "<C-a>", ':Telescope live_grep default_text=<C-R>=expand(\"<cword>\")<cr>', opt)
 map("n", "<C-p>", ':Telescope find_files find_command=rg,--files,--hidden,-g!.git <cr>', opt)
 -- vim.keymap.set('n', '<C-p>', builtin.find_files, {})
-vim.keymap.set('n', '<C-S-f>', '::Telescope live_grep <cr>', {})
-vim.keymap.set('n', '<leader>f', '::Telescope live_grep <cr>', {})
+vim.keymap.set('n', '<C-S-f>', ':Telescope live_grep <cr>', {})
+-- 指定目录 :Telescope live_grep search_dirs={"app/","lib/"}
+vim.keymap.set('n', '<leader>f', ':Telescope live_grep <cr>', {})
 -- vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 -- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
