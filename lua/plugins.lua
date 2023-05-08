@@ -5,6 +5,13 @@ return require('packer').startup(function()
   -- 主题
   use { "ellisonleao/gruvbox.nvim" }
   use 'navarasu/onedark.nvim'
+  use 'hardhackerlabs/theme-vim'
+
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+  require('lualine').setup()
 
   -- 文件树
   use {

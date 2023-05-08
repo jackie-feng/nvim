@@ -209,3 +209,6 @@ function _G.get_vars(name)
   local v = vim.api.nvim_get_var(name)
   return v
 end
+
+-- 主题
+vim.cmd.colorscheme 'hardhacker'

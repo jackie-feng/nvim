@@ -5,10 +5,6 @@ lua require('basic')
 lua require('plugins')
 " 快捷键映射
 lua require('keybindings')
-" 皮肤设置
-" https://github.com/ellisonleao/gruvbox.nvim
-set background=dark " or light if you want light mode
-colorscheme onedark
 " 自动命令
 lua require('autocmds')
 
