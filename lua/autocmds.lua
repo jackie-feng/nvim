@@ -21,3 +21,10 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
   end
 })
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'go', 'sh', 'make', 'python' },
+  callback = function()
+    vim.api.nvim_command('set noexpandtab')
+  end
+})

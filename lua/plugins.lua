@@ -46,14 +46,14 @@ return require('packer').startup(function()
   -- lspkind 补全提示图标
   use 'onsails/lspkind-nvim'
 
-  -- 对齐线
-  use "lukas-reineke/indent-blankline.nvim"
-  require("indent_blankline").setup {
-    -- space_char_blankline = ' ',
-    -- for example, context is off by default, use this to turn it on
-    -- show_current_context = true,
-    -- show_current_context_start = true,
-  }
+  -- -- 对齐线
+  -- use "lukas-reineke/indent-blankline.nvim"
+  -- require("indent_blankline").setup {
+  --   -- space_char_blankline = ' ',
+  --   -- for example, context is off by default, use this to turn it on
+  --   -- show_current_context = true,
+  --   -- show_current_context_start = true,
+  -- }
 
   -- git 文件行改动状态
   use 'lewis6991/gitsigns.nvim'
