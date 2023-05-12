@@ -7,3 +7,5 @@ require'nvim-tree'.setup {
       ignore = false
   }
 }
+
+require'nvim-web-devicons'.setup {}

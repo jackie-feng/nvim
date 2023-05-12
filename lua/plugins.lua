@@ -7,6 +7,7 @@ return require('packer').startup(function()
   use 'navarasu/onedark.nvim'
   use 'hardhackerlabs/theme-vim'
 
+  use 'nvim-tree/nvim-web-devicons'
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
