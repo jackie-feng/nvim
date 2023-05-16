@@ -42,12 +42,23 @@ map("i", "<C-s>", "<esc>:w<cr>", opt)
 
 -- 文件搜索 / 光标所在词搜索 / 全文搜索
 local builtin = require('telescope.builtin')
-map("n", "<C-a>", ':Telescope live_grep default_text=<C-R>=expand(\"<cword>\")<cr>', opt)
+map("n", "<C-a>", ':Telescope live_grep default_text=<C-R>=expand(\"<cword>\")<cr><cr>', opt)
 map("n", "<C-p>", ':Telescope find_files find_command=rg,--files,--hidden,-g!.git <cr>', opt)
--- vim.keymap.set('n', '<C-p>', builtin.find_files, {})
-vim.keymap.set('n', '<C-S-f>', ':Telescope live_grep <cr>', {})
+
+-- 另外三种光标所在词搜索绑定方式
+function _G.rg_live_grep_cword()
+  -- vim.call 等价于 vim.fn
+  -- builtin.live_grep{default_text=vim.call('expand','<cword>') }
+  builtin.live_grep{default_text=vim.fn.expand('<cword>')}
+end
+-- vim.keymap.set('n', '<C-a>', rg_live_grep_cword, {})
+-- vim.keymap.set('n', '<C-a>', ':lua rg_live_grep_cword() <cr>', {})
+-- vim.keymap.set('n', '<C-a>', ":call v:lua.rg_live_grep_cword()<cr>", {})
+
 -- 指定目录 :Telescope live_grep search_dirs={"app/","lib/"}
+map('n', '<C-S-f>', ':Telescope live_grep search_dirs={}<cr>', opt)
 vim.keymap.set('n', '<leader>f', ':Telescope live_grep <cr>', {})
+
 -- vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 -- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
